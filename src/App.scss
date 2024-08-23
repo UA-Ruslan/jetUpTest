@@ -1,0 +1,32 @@
+@import './scss/reset.scss';
+@import './scss/variables.scss';
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 10px;
+}
+
+body {
+	font-size: 1.6rem;
+	color: $primary_white;
+	background-color: $primary_black;
+}
+
+.app {
+	display: flex;
+	flex-direction: column;
+
+	width: 100%;
+	min-height: 100vh;
+
+	padding: clamp(0.5rem, 5vw, 10rem);
+}
+
+h1,
+h2 {
+	font-size: clamp(2rem, 5vw, 4rem);
+	text-transform: uppercase;
+}

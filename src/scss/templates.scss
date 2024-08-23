@@ -1,0 +1,72 @@
+@import './variables.scss';
+
+%pageCommon {
+	display: flex;
+	flex-grow: 1;
+
+	width: 100%;
+
+	background-color: $primary_black;
+	border-radius: 50%;
+}
+
+%btnCommon {
+	position: relative;
+
+	color: black;
+	text-transform: uppercase;
+
+	background-color: $yellow;
+	border-radius: $borderRadius_2;
+	border: transparent;
+	overflow: hidden;
+	cursor: pointer;
+	transition: $hover_transition;
+
+	&::before {
+		content: '';
+
+		position: absolute;
+		top: 50%;
+		left: 50%;
+
+		width: 0;
+		aspect-ratio: 1;
+
+		background-color: $primary_black;
+		transform: translate(-50%, -50%);
+		border-radius: 50%;
+		z-index: 1;
+		transition: $hover_transition;
+	}
+
+	&:hover {
+		box-shadow: 0 0 1rem .1rem $yellow;
+		transition: $hover_transition;
+		
+		&::before {
+			width: 150%;
+			transition: $hover_transition;
+		}
+		.btn_title {
+			color: $primary_white;
+			transition: $hover_transition;
+		}
+	}
+
+	.btn_title {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+
+		transform: translate(-50%, -50%);
+		z-index: 2;
+		transition: $hover_transition;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	%pageCommon {
+		flex-direction: column;
+	}
+}

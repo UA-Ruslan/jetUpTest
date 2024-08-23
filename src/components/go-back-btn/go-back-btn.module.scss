@@ -1,0 +1,11 @@
+@import '../../scss/templates.scss';
+@import '../../scss/variables.scss';
+
+.go_back_btn {
+	@extend %btnCommon;
+
+	height: 3rem;
+	width: clamp(10rem, 10vw, 25rem);
+
+	margin-bottom: clamp(2rem, 5vw, 5rem);
+}
