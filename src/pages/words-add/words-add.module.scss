@@ -67,6 +67,10 @@
 				@extend %btnCommon;
 				height: 3rem;
 				width: clamp(10rem, 10vw, 25rem);
+
+				&:disabled {
+					opacity: .5;
+				}
 			}
 		}
 	}

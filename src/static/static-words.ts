@@ -1,0 +1,17 @@
+export const STATIC_WORDS = [
+	{ word: 'apple', translation: 'яблуко' },
+	{ word: 'cat', translation: 'кіт' },
+	{ word: 'house', translation: 'дім' },
+	{ word: 'book', translation: 'книга' },
+	{ word: 'water', translation: 'вода' },
+	{ word: 'dog', translation: 'собака' },
+	{ word: 'sun', translation: 'сонце' },
+	{ word: 'car', translation: 'автомобіль' },
+	{ word: 'tree', translation: 'дерево' },
+	{ word: 'milk', translation: 'молоко' },
+	{ word: 'chair', translation: 'стілець' },
+	{ word: 'pen', translation: 'ручка' },
+	{ word: 'bird', translation: 'птах' },
+	{ word: 'phone', translation: 'телефон' },
+	{ word: 'bread', translation: 'хліб' },
+];
