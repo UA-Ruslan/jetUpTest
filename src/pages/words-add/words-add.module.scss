@@ -65,8 +65,10 @@
 			}
 			.words_add__form_btn {
 				@extend %btnCommon;
-				height: 3rem;
+
 				width: clamp(10rem, 10vw, 25rem);
+
+				margin-bottom: 5rem;
 
 				&:disabled {
 					opacity: .5;
