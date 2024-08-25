@@ -2,34 +2,105 @@
 @import '../../scss/variables.scss';
 
 .knowledge_test__container {
-	@extend %pageCommon;
+  @extend %pageCommon;
 
-	flex-direction: column;
-	gap: 1rem;
+  flex-direction: column;
+  gap: 1rem;
 
-	.knowledge_test__title_container {
-		width: 100%;
+  .knowledge_test__title_container {
+    width: 100%;
 
-		padding: 2rem;
+    padding: 2rem;
 
-		background-color: $secondary_black;
-		border-radius: $borderRadius_1 $borderRadius_1 0 0;
+    background-color: $secondary_black;
+    border-radius: $borderRadius_1 $borderRadius_1 0 0;
 
-		.knowledge_test__title {
-			text-align: center;
-		}
-	}
-	
-	.knowledge_test__content_wrapper {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		flex-grow: 1;
+    .knowledge_test__title {
+      text-align: center;
+    }
+  }
 
-		padding: clamp(1.5rem, 6vw, 4rem) 1.5rem;
+  .knowledge_test__content_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
 
-		background-color: $secondary_black;
-		border-radius: 0 0 $borderRadius_1 $borderRadius_1;
-		overflow: auto;
-	}
+    padding: clamp(1.5rem, 6vw, 4rem) 1.5rem;
+
+    background-color: $secondary_black;
+    border-radius: 0 0 $borderRadius_1 $borderRadius_1;
+    overflow: auto;
+
+    .content__text {
+      margin-bottom: clamp(2rem, 5vw, 5rem);
+      text-align: center;
+    }
+
+    .content__text:first-of-type {
+      margin-bottom: 1rem;
+    }
+
+    .content__answers_wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      align-items: center;
+      justify-items: center;
+      gap: 10px;
+
+      width: 50%;
+
+      .content__answer {
+        color: $primary_black;
+
+        margin-bottom: 0;
+
+        background-color: $yellow_1;
+        transition: $hover_transition;
+
+        &:hover {
+          background-color: $yellow;
+          cursor: pointer;
+          transition: $hover_transition;
+        }
+      }
+    }
+  }
+}
+.content__word_common {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 3rem;
+  width: clamp(15rem, 7vw, 30rem);
+
+  margin-bottom: clamp(2rem, 5vw, 5rem);
+
+  text-transform: uppercase;
+
+  background-color: $primary_gray;
+  border-radius: $borderRadius_2;
+}
+
+@media screen and (max-width: $point768) {
+  .knowledge_test__container {
+    .knowledge_test__content_wrapper {
+      .content__answers_wrapper {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $point425) {
+  .knowledge_test__container {
+    .knowledge_test__content_wrapper {
+      .content__answers_wrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }
+    }
+  }
 }

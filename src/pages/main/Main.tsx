@@ -7,10 +7,11 @@ import WordsList from '../../components/words-list/Words-list';
 export default function MainPage() {
   const dispatch = useDispatch();
   const allWords = useSelector(selectAllWords);
+
   const handleClearStorage = () => {
     dispatch(clearWords());
-	};
-	
+  };
+
   return (
     <section className={styles.main_page__container}>
       <Navbar />
@@ -20,7 +21,7 @@ export default function MainPage() {
         </div>
         <div className={styles.main_page__content}>
           <button className={styles.main_page__clear_btn} onClick={handleClearStorage}>
-            <span className={styles.btn_title}>Базові слова</span>
+            <span className={styles.btn_title}>Видалити все</span>
           </button>
 
           <WordsList words={allWords} />
