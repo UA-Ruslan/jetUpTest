@@ -15,8 +15,8 @@ export default function GoBackBtn() {
   const goBack = () => {
     navigate(-1);
     if (counter != 0) {
-		dispatch(resetQuestionCounter());
-		dispatch(resetAnswersResults());
+      dispatch(resetQuestionCounter());
+      dispatch(resetAnswersResults());
     }
   };
 

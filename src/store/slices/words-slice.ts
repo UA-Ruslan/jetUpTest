@@ -18,7 +18,7 @@ interface WordsState {
 const initialState: WordsState = {
   addedWords: JSON.parse(localStorage.getItem('words') || '[]'),
   defaultWords: DEFAULT_WORDS,
-  allWords: DEFAULT_WORDS.concat(JSON.parse(localStorage.getItem('words') || '[]')),
+  allWords: JSON.parse(localStorage.getItem('words') || '[]').concat(DEFAULT_WORDS),
   randomWords: [],
   randomAnswers: [],
   questionCounter: 0,
@@ -32,9 +32,9 @@ export const wordsSlice = createSlice({
   initialState,
   reducers: {
     addWord: (state, action: PayloadAction<Words>) => {
-      state.addedWords.push(action.payload);
+      state.addedWords.unshift(action.payload);
       localStorage.setItem('words', JSON.stringify(state.addedWords));
-      state.allWords = state.defaultWords.concat(state.addedWords);
+      state.allWords = state.addedWords.concat(state.defaultWords);
     },
     clearWords: state => {
       state.addedWords = [];

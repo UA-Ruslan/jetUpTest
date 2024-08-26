@@ -20,7 +20,11 @@ export default function MainPage() {
           <h1 className={styles.main_page__title}>Онлайн словник</h1>
         </div>
         <div className={styles.main_page__content}>
-          <button className={styles.main_page__clear_btn} onClick={handleClearStorage}>
+          <button
+            className={styles.main_page__clear_btn}
+            disabled={allWords.length <= 15}
+            onClick={handleClearStorage}
+          >
             <span className={styles.btn_title}>Видалити все</span>
           </button>
 

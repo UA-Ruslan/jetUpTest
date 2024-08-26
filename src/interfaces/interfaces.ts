@@ -5,6 +5,6 @@ export interface Words {
 }
 
 export interface Statistic {
-	score: number;
-	date: string;
+  score: number;
+  date: string;
 }

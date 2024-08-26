@@ -39,9 +39,25 @@
         @extend %btnCommon;
 
         width: clamp(12rem, 10vw, 25rem);
-		margin-bottom: 5rem;
+        margin-bottom: 5rem;
 
         white-space: nowrap;
+
+        &:disabled {
+          opacity: 0.5;
+          cursor: auto;
+
+          &:hover {
+            box-shadow: none;
+
+            &::before {
+              width: 0;
+            }
+            .btn_title {
+              color: $primary_black;
+            }
+          }
+        }
       }
     }
   }
