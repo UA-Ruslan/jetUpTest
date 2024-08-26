@@ -1,12 +1,13 @@
 import Navbar from '../../components/navbar/Navbar';
 import styles from './main.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { clearWords, selectAllWords } from '../../store/slices/words-slice';
+import { clearWords, selectAllWords, selectFullStatistics } from '../../store/slices/words-slice';
 import WordsList from '../../components/words-list/Words-list';
 
 export default function MainPage() {
   const dispatch = useDispatch();
   const allWords = useSelector(selectAllWords);
+  const fullStatistics = useSelector(selectFullStatistics);
 
   const handleClearStorage = () => {
     dispatch(clearWords());
@@ -22,7 +23,7 @@ export default function MainPage() {
         <div className={styles.main_page__content}>
           <button
             className={styles.main_page__clear_btn}
-            disabled={allWords.length <= 15}
+            disabled={allWords.length <= 15 && fullStatistics.length === 0}
             onClick={handleClearStorage}
           >
             <span className={styles.btn_title}>Видалити все</span>
